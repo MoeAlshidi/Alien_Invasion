@@ -1,5 +1,6 @@
 import sys
 import pygame
+
 from settings import Settings
 from strings import Strings
 from vectors.ship import Ship
