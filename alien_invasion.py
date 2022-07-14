@@ -76,12 +76,14 @@ class AlienInvasion:
         space_x = self.settings.screen_width-(2*alien_width)
         num_of_aliens = space_x//(2*alien_width)
         for e in range(num_of_aliens):
-            alien = Alien(self)
-            alien.x = alien_width+2*alien_width*e
+            self. _create_aliens(e)
 
-            alien.rect.x = alien.x
-
-            self.aliens.add(alien)
+    def _create_aliens(self, e):
+        alien = Alien(self)
+        alien_width = alien.rect.width
+        alien.x = alien_width+2*alien_width*e
+        alien.rect.x = alien.x
+        self.aliens.add(alien)
 
     def run_game(self):
         while True:
